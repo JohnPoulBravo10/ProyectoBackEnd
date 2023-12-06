@@ -1,13 +1,47 @@
 [
 	{
 		"id": 1,
-		"title": {
-			"title": "pana",
-			"description": "sdfs",
-			"price": 200,
-			"thumbnail": "img.asfas",
-			"code": 898,
-			"stock": 56
-		}
+		"title": "Pan",
+		"description": "sdfs",
+		"price": 200,
+		"thumbnail": "img.asfas",
+		"code": 898,
+		"stock": 56
+	},
+	{
+		"id": 2,
+		"title": "Azucar",
+		"description": "sdfs",
+		"price": 200,
+		"thumbnail": "img.asfas",
+		"code": 898,
+		"stock": 56
+	},
+	{
+		"id": 3,
+		"title": "Yerba",
+		"description": "sdfs",
+		"price": 200,
+		"thumbnail": "img.asfas",
+		"code": 898,
+		"stock": 56
+	},
+	{
+		"id": 4,
+		"title": "Mayonesa",
+		"description": "Mayonesa Natura",
+		"price": 300,
+		"thumbnail": "1.img",
+		"code": 1242,
+		"stock": 234
+	},
+	{
+		"id": 5,
+		"title": "Jugo tang",
+		"description": "Juego de pomelo",
+		"price": 100,
+		"thumbnail": "1.img",
+		"code": 12424,
+		"stock": 1
 	}
 ]

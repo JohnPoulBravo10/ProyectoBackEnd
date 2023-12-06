@@ -21,15 +21,16 @@ export class ProductManager {
             const producto = {
                 id,
                 title: title, 
-                description,
-                price,
-                thumbnail,
-                code,
-                stock
+                description: description,
+                price: price,
+                thumbnail: thumbnail,
+                code: code,
+                stock: stock
             };
             this.products.push(producto);
             await this.guardarProductos();
-            return producto;
+            await this.cargarProductos()
+            return this.products;
         } else {
             return "El código ya existe, elija otro código";
         }

@@ -17,7 +17,7 @@ export class CartManager{
       getCartProducts = async (id) => {
         const carts = await this.getCart();
 
-        const cart = carts.find(cart => cart.id === id)
+        const cart = carts.find(cart => cart.id == id)
 
         if(cart){
             return cart.products
@@ -29,7 +29,7 @@ export class CartManager{
 newCart = async () => {
        this.carts = await this.getCart();
        let id;
-       if (this.carts.length === 0) {
+       if (this.carts.length == 0) {
         id = 1;
     } else {
         id = this.carts[this.carts.length - 1].id + 1;
@@ -43,31 +43,31 @@ newCart = async () => {
 }
     
 
-addProductsToCart = async (cartId, productId) =>{
-    const cart = await this.getCart()
+addProductsToCart = async (cartId, productId) => {
+    const cart = await this.getCart();
 
-    const index = carts.findIndex(cart => cart.id === cartId)
+    const index = this.carts.findIndex(cart => cart.id == cartId); 
 
-    if(index != -1){
-        const cartProducts = await this.getCartProducts(cartId)
-        const existeProductoIndex = cartProducts.findIndex(product => product.id == productId)
+    if (index !== -1) {
+        const cartProducts = await this.getCartProducts(cartId);
+        const existeProductoIndex = cartProducts.findIndex(product => product.productId == productId); 
 
-        if(existeProductoIndex != -1){
-            cartProducts[existeProductoIndex].quantity=cartProducts[existeProductoIndex].quantity+1;
-        }else{
-            cartProducts.push({productId,quantity: 1});
+        if (existeProductoIndex !== -1) {
+            cartProducts[existeProductoIndex].quantity = cartProducts[existeProductoIndex].quantity + 1;
+        } else {
+            cartProducts.push({ productId, quantity: 1 });
         }
-        await fs.writeFile(this.path,JSON.stringify(carts))
 
+        this.carts[index].products = cartProducts;
 
-    console.log("producto agregado con exito")
+        await fs.writeFile(this.path, JSON.stringify(this.carts)); 
 
-    }else{
-        console.log("Carrito no encontrado")
+        console.log("Producto agregado con éxito");
+    } else {
+        console.log("Carrito no encontrado");
     }
-
-    
 }
+
 
 
 }
